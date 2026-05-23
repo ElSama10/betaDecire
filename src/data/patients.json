@@ -7,7 +7,7 @@
     "therapistId": "ther-001",
     "frequency": "2 veces por semana",
     "status": "Activo",
-    "photo": "https://i.pravatar.cc/150?u=pat-001",
+    "photo": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Mateo&backgroundColor=b6e3f4",
     "createdAt": "2025-01-15T10:00:00Z"
   },
   {
@@ -18,7 +18,7 @@
     "therapistId": "ther-002",
     "frequency": "1 vez por semana",
     "status": "Reevaluación",
-    "photo": "https://i.pravatar.cc/150?u=pat-002",
+    "photo": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Sofia&backgroundColor=ffd5dc",
     "createdAt": "2025-02-10T14:30:00Z"
   },
   {
@@ -29,7 +29,7 @@
     "therapistId": "ther-001",
     "frequency": "3 veces por semana",
     "status": "Activo",
-    "photo": "https://i.pravatar.cc/150?u=pat-003",
+    "photo": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Lucas&backgroundColor=c0aede",
     "createdAt": "2024-11-05T09:15:00Z"
   },
   {
@@ -40,7 +40,7 @@
     "therapistId": "ther-003",
     "frequency": "2 veces por semana",
     "status": "Alta terapéutica",
-    "photo": "https://i.pravatar.cc/150?u=pat-004",
+    "photo": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Valentina&backgroundColor=d1d4f9",
     "createdAt": "2024-08-20T16:45:00Z"
   },
   {
@@ -51,7 +51,7 @@
     "therapistId": "ther-002",
     "frequency": "2 veces por semana",
     "status": "Suspendido",
-    "photo": "https://i.pravatar.cc/150?u=pat-005",
+    "photo": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Diego&backgroundColor=ffdfbf",
     "createdAt": "2025-03-01T11:20:00Z"
   }
 ]
