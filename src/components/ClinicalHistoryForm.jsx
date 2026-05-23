@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { CheckCircle2, ChevronRight, ChevronLeft, Save } from 'lucide-react';
 import { motion } from 'framer-motion';
+import useStore from '../store/useStore';
+import useAuthStore from '../store/authStore';
 
 const steps = [
   { id: 1, title: 'Motivo de consulta' },
@@ -12,8 +14,14 @@ const steps = [
 ];
 
 export default function ClinicalHistoryForm({ patientId }) {
+  const { patients, updateClinicalHistory } = useStore();
+  const patient = patients.find(p => p.id === patientId);
+  const user = useAuthStore((state) => state.user);
+  
   const [currentStep, setCurrentStep] = useState(1);
-  const { register, handleSubmit, watch } = useForm({
+  const [isSaved, setIsSaved] = useState(false);
+
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       motivo: '',
       embarazo: '',
@@ -23,13 +31,21 @@ export default function ClinicalHistoryForm({ patientId }) {
     }
   });
 
+  useEffect(() => {
+    if (patient?.clinicalHistory) {
+      reset(patient.clinicalHistory);
+    }
+  }, [patient, reset]);
+
   const onSubmit = (data) => {
-    console.log("Guardado:", data);
-    // En un caso real se guardaría en el store
+    updateClinicalHistory(patientId, data);
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 3000);
   };
 
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, steps.length));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
+  const isReadOnly = user?.role !== 'admin';
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -81,7 +97,8 @@ export default function ClinicalHistoryForm({ patientId }) {
                   <textarea 
                     {...register("motivo")}
                     rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none"
+                    disabled={isReadOnly}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none disabled:bg-gray-100 disabled:text-gray-600"
                     placeholder="Describa el motivo principal..."
                   />
                 </div>
@@ -96,7 +113,8 @@ export default function ClinicalHistoryForm({ patientId }) {
                   <textarea 
                     {...register("embarazo")}
                     rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none"
+                    disabled={isReadOnly}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none disabled:bg-gray-100 disabled:text-gray-600"
                     placeholder="Semanas de gestación, tipo de parto, complicaciones..."
                   />
                 </div>
@@ -111,7 +129,8 @@ export default function ClinicalHistoryForm({ patientId }) {
                   <textarea 
                     {...register("desarrolloMotor")}
                     rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none"
+                    disabled={isReadOnly}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none disabled:bg-gray-100 disabled:text-gray-600"
                     placeholder="Control cefálico, marcha independiente..."
                   />
                 </div>
@@ -126,7 +145,8 @@ export default function ClinicalHistoryForm({ patientId }) {
                   <textarea 
                     {...register("desarrolloLenguaje")}
                     rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none"
+                    disabled={isReadOnly}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none disabled:bg-gray-100 disabled:text-gray-600"
                     placeholder="Balbuceo, primeras palabras, frases..."
                   />
                 </div>
@@ -141,7 +161,8 @@ export default function ClinicalHistoryForm({ patientId }) {
                   <textarea 
                     {...register("observaciones")}
                     rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none"
+                    disabled={isReadOnly}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none disabled:bg-gray-100 disabled:text-gray-600"
                     placeholder="Comportamiento durante la entrevista, interacción..."
                   />
                 </div>
@@ -170,13 +191,18 @@ export default function ClinicalHistoryForm({ patientId }) {
                 <ChevronRight className="w-4 h-4 ml-1" />
               </button>
             ) : (
-              <button
-                type="submit"
-                className="px-4 py-2 flex items-center text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors"
-              >
-                <Save className="w-4 h-4 mr-2" />
-                Guardar Historia
-              </button>
+              !isReadOnly && (
+                <button
+                  type="submit"
+                  disabled={isSaved}
+                  className={`px-4 py-2 flex items-center text-sm font-medium text-white rounded-lg transition-colors ${
+                    isSaved ? 'bg-green-500' : 'bg-green-600 hover:bg-green-700'
+                  }`}
+                >
+                  <Save className="w-4 h-4 mr-2" />
+                  {isSaved ? '¡Guardado!' : 'Guardar Historia'}
+                </button>
+              )
             )}
           </div>
         </form>

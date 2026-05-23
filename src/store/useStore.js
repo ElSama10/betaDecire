@@ -29,6 +29,12 @@ const useStore = create(
       })),
       removePatient: (id) => set((state) => ({ patients: state.patients.filter(p => p.id !== id) })),
       
+      updateClinicalHistory: (patientId, data) => set((state) => ({
+        patients: state.patients.map(p => 
+          p.id === patientId ? { ...p, clinicalHistory: data } : p
+        )
+      })),
+      
       addEvaluation: (evaluation) => set((state) => ({ evaluations: [...state.evaluations, evaluation] })),
       removeEvaluation: (id) => set((state) => ({ evaluations: state.evaluations.filter(e => e.id !== id) })),
       

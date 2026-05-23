@@ -4,12 +4,14 @@ import useStore from '../store/useStore';
 import { format } from 'date-fns';
 import AddButton from '../components/AddButton';
 import DeleteButton from '../components/DeleteButton';
+import PaymentReceiptModal from '../components/PaymentReceiptModal';
 
 export default function Payments() {
   const { payments, patients, addPayment, removePayment } = useStore();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('Todos');
   const [showForm, setShowForm] = useState(false);
+  const [selectedReceipt, setSelectedReceipt] = useState(null);
 
   const [formData, setFormData] = useState({
     patientId: '',
@@ -210,13 +212,18 @@ export default function Payments() {
                     </td>
                     <td className="px-6 py-4 text-right font-bold text-gray-900">${payment.amount.toFixed(2)}</td>
                     <td className="px-6 py-4 text-right">
-                      <div className="flex justify-end items-center space-x-2">
-                        <DeleteButton onClick={() => removePayment(payment.id)} />
-                        <button className="p-1.5 text-gray-400 hover:text-gray-600 rounded-md hover:bg-gray-100">
-                          <Download className="w-5 h-5" />
-                        </button>
-                      </div>
-                    </td>
+                        <div className="flex justify-end items-center space-x-2">
+                          <DeleteButton onClick={() => removePayment(payment.id)} />
+                          {payment.status === 'Pagado' && (
+                            <button 
+                              onClick={() => setSelectedReceipt({ payment, patient })}
+                              className="text-[var(--color-primary)] hover:text-blue-800 font-medium px-2"
+                            >
+                              Ver PDF
+                            </button>
+                          )}
+                        </div>
+                      </td>
                   </tr>
                 );
               })}
@@ -224,6 +231,14 @@ export default function Payments() {
           </table>
         </div>
       </div>
+
+      {selectedReceipt && (
+        <PaymentReceiptModal 
+          payment={selectedReceipt.payment} 
+          patient={selectedReceipt.patient} 
+          onClose={() => setSelectedReceipt(null)} 
+        />
+      )}
     </div>
   );
 }

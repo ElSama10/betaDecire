@@ -59,7 +59,7 @@ export default function Patients() {
       therapistId: therapists[0]?.id || "t-001",
       frequency: formData.frequency,
       status: formData.status,
-      photo: `https://ui-avatars.com/api/?name=${encodeURIComponent(formData.name)}&background=random`,
+      photo: `https://api.dicebear.com/7.x/fun-emoji/svg?seed=${encodeURIComponent(formData.name)}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`,
       createdAt: new Date().toISOString()
     };
     addPatient(newPatient);
@@ -187,8 +187,6 @@ export default function Patients() {
                   <th className="px-6 py-4">Paciente</th>
                   <th className="px-6 py-4">Edad</th>
                   <th className="px-6 py-4">Diagnóstico</th>
-                  <th className="px-6 py-4">Terapeuta</th>
-                  <th className="px-6 py-4">Frecuencia</th>
                   <th className="px-6 py-4">Estado</th>
                   <th className="px-6 py-4 text-right">Acciones</th>
                 </tr>
@@ -210,8 +208,6 @@ export default function Patients() {
                       </td>
                       <td className="px-6 py-4 text-gray-600">{patient.age} años</td>
                       <td className="px-6 py-4 text-gray-600">{patient.diagnosis}</td>
-                      <td className="px-6 py-4 text-gray-600">{therapist?.name}</td>
-                      <td className="px-6 py-4 text-gray-600">{patient.frequency}</td>
                       <td className="px-6 py-4">
                         <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${getStatusColor(patient.status)}`}>
                           {patient.status}

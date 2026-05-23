@@ -15,6 +15,9 @@ import { motion } from 'framer-motion';
 import useStore from '../store/useStore';
 import { format } from 'date-fns';
 import ClinicalHistoryForm from '../components/ClinicalHistoryForm';
+import Evaluations from './Evaluations';
+import InterventionPlans from './InterventionPlans';
+import Payments from './Payments';
 
 export default function PatientProfile() {
   const { id } = useParams();
@@ -146,8 +149,20 @@ export default function PatientProfile() {
               <ClinicalHistoryForm patientId={patient.id} />
             )}
 
+            {activeTab === 'evaluacion' && (
+              <Evaluations />
+            )}
+
+            {activeTab === 'plan' && (
+              <InterventionPlans />
+            )}
+            
+            {activeTab === 'pagos' && (
+              <Payments />
+            )}
+
             {/* Other tabs placeholders */}
-            {['evaluacion', 'plan', 'evolucion', 'seguimiento', 'agenda', 'pagos', 'archivos'].includes(activeTab) && (
+            {['evolucion', 'seguimiento', 'agenda', 'archivos'].includes(activeTab) && (
               <div className="flex flex-col items-center justify-center h-48 text-gray-500">
                 <p>Contenido para {tabs.find(t => t.id === activeTab)?.label} en construcción...</p>
               </div>
