@@ -1,0 +1,11 @@
+[
+  {
+    "id": "fol-001",
+    "patientId": "pat-001",
+    "month": "Abril 2025",
+    "completedObjectives": 1,
+    "pendingObjectives": 2,
+    "report": "Durante el mes de abril, Mateo mostró una excelente disposición en las sesiones. Se logró consolidar el punto articulatorio de los fonemas bilabiales. Aún requiere apoyo para la estructuración de frases simples.",
+    "createdAt": "2025-04-30T15:00:00Z"
+  }
+]

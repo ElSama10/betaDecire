@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pat-001",
+    "name": "Mateo García",
+    "age": 5,
+    "diagnosis": "Trastorno del Lenguaje Expresivo",
+    "therapistId": "ther-001",
+    "frequency": "2 veces por semana",
+    "status": "Activo",
+    "photo": "https://i.pravatar.cc/150?u=pat-001",
+    "createdAt": "2025-01-15T10:00:00Z"
+  },
+  {
+    "id": "pat-002",
+    "name": "Sofía López",
+    "age": 4,
+    "diagnosis": "Retraso Simple del Lenguaje",
+    "therapistId": "ther-002",
+    "frequency": "1 vez por semana",
+    "status": "Reevaluación",
+    "photo": "https://i.pravatar.cc/150?u=pat-002",
+    "createdAt": "2025-02-10T14:30:00Z"
+  },
+  {
+    "id": "pat-003",
+    "name": "Lucas Martínez",
+    "age": 6,
+    "diagnosis": "TEA Nivel 1",
+    "therapistId": "ther-001",
+    "frequency": "3 veces por semana",
+    "status": "Activo",
+    "photo": "https://i.pravatar.cc/150?u=pat-003",
+    "createdAt": "2024-11-05T09:15:00Z"
+  },
+  {
+    "id": "pat-004",
+    "name": "Valentina Rodríguez",
+    "age": 7,
+    "diagnosis": "Dislalia Múltiple",
+    "therapistId": "ther-003",
+    "frequency": "2 veces por semana",
+    "status": "Alta terapéutica",
+    "photo": "https://i.pravatar.cc/150?u=pat-004",
+    "createdAt": "2024-08-20T16:45:00Z"
+  },
+  {
+    "id": "pat-005",
+    "name": "Diego Fernández",
+    "age": 3,
+    "diagnosis": "Sospecha Apraxia del Habla",
+    "therapistId": "ther-002",
+    "frequency": "2 veces por semana",
+    "status": "Suspendido",
+    "photo": "https://i.pravatar.cc/150?u=pat-005",
+    "createdAt": "2025-03-01T11:20:00Z"
+  }
+]

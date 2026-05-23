@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ther-001",
+    "name": "Dra. Ana Silva",
+    "specialty": "Fonoaudióloga",
+    "email": "ana.silva@dicere.com",
+    "avatar": "https://i.pravatar.cc/150?u=ther-001"
+  },
+  {
+    "id": "ther-002",
+    "name": "Lic. Carlos Ruiz",
+    "specialty": "Terapeuta Ocupacional",
+    "email": "carlos.ruiz@dicere.com",
+    "avatar": "https://i.pravatar.cc/150?u=ther-002"
+  },
+  {
+    "id": "ther-003",
+    "name": "Dra. Laura Gómez",
+    "specialty": "Psicóloga Infantil",
+    "email": "laura.gomez@dicere.com",
+    "avatar": "https://i.pravatar.cc/150?u=ther-003"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "plan-001",
+    "patientId": "pat-001",
+    "objectives": [
+      {
+        "id": "obj-1",
+        "description": "Incrementar vocabulario expresivo a 50 palabras",
+        "status": "En progreso",
+        "priority": "Alta"
+      },
+      {
+        "id": "obj-2",
+        "description": "Producir combinaciones de 2 palabras (Sustantivo + Verbo)",
+        "status": "Pendiente",
+        "priority": "Media"
+      },
+      {
+        "id": "obj-3",
+        "description": "Mejorar punto y modo articulatorio del fonema /p/ y /m/",
+        "status": "Completado",
+        "priority": "Alta"
+      }
+    ],
+    "progress": 33,
+    "status": "Activo",
+    "updatedAt": "2025-05-15T10:00:00Z"
+  }
+]

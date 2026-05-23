@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sch-001",
+    "patientId": "pat-001",
+    "therapistId": "ther-001",
+    "appointmentDate": "2025-05-23T10:00:00Z",
+    "status": "Confirmada",
+    "notes": "Sesión regular de lenguaje"
+  },
+  {
+    "id": "sch-002",
+    "patientId": "pat-002",
+    "therapistId": "ther-002",
+    "appointmentDate": "2025-05-23T11:30:00Z",
+    "status": "Pendiente",
+    "notes": "Reevaluación trimestral"
+  },
+  {
+    "id": "sch-003",
+    "patientId": "pat-003",
+    "therapistId": "ther-001",
+    "appointmentDate": "2025-05-24T09:00:00Z",
+    "status": "Confirmada",
+    "notes": "Terapia de juego"
+  },
+  {
+    "id": "sch-004",
+    "patientId": "pat-005",
+    "therapistId": "ther-002",
+    "appointmentDate": "2025-05-25T16:00:00Z",
+    "status": "Cancelada",
+    "notes": "Paciente enfermo"
+  }
+]

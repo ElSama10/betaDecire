@@ -1,0 +1,34 @@
+[
+  {
+    "id": "eval-001",
+    "patientId": "pat-001",
+    "areas": {
+      "lenguajeReceptivo": "En desarrollo",
+      "lenguajeExpresivo": "Comprometido",
+      "fonologia": "Comprometido",
+      "pragmatica": "Adecuado",
+      "atencion": "Adecuado",
+      "conducta": "Adecuado",
+      "motricidadOrofacial": "En desarrollo"
+    },
+    "severity": "Moderado",
+    "clinicalSummary": "El paciente presenta dificultades significativas en la expresión verbal, con un repertorio fonológico reducido para su edad cronológica.",
+    "createdAt": "2025-01-20T10:00:00Z"
+  },
+  {
+    "id": "eval-002",
+    "patientId": "pat-003",
+    "areas": {
+      "lenguajeReceptivo": "En desarrollo",
+      "lenguajeExpresivo": "Comprometido",
+      "fonologia": "En desarrollo",
+      "pragmatica": "Comprometido",
+      "atencion": "Comprometido",
+      "conducta": "Comprometido",
+      "motricidadOrofacial": "Adecuado"
+    },
+    "severity": "Leve a Moderado",
+    "clinicalSummary": "Perfil compatible con TEA Nivel 1. Desafíos principales en la interacción social pragmática y atención conjunta.",
+    "createdAt": "2024-11-10T09:15:00Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "evo-001",
+    "patientId": "pat-001",
+    "sessionDate": "2025-05-20T10:00:00Z",
+    "sessionNotes": "Trabajamos vocabulario de animales de la granja mediante juego simbólico.",
+    "achievement": "Logró nominar 3 animales nuevos de forma espontánea.",
+    "response": "Excelente",
+    "recommendation": "Repasar onomatopeyas de animales en casa durante el baño."
+  },
+  {
+    "id": "evo-002",
+    "patientId": "pat-001",
+    "sessionDate": "2025-05-23T10:00:00Z",
+    "sessionNotes": "Juego estructurado con bloques para fomentar combinaciones de 2 palabras (Dame bloque, Pon bloque).",
+    "achievement": "Utilizó 'dame' + sustantivo en 4 ocasiones con apoyo visual.",
+    "response": "Buena",
+    "recommendation": "Fomentar el uso de 'dame' antes de entregar objetos deseados."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pay-001",
+    "patientId": "pat-001",
+    "amount": 150.00,
+    "status": "Pagado",
+    "paymentDate": "2025-05-01T10:00:00Z",
+    "method": "Transferencia"
+  },
+  {
+    "id": "pay-002",
+    "patientId": "pat-002",
+    "amount": 120.00,
+    "status": "Pendiente",
+    "paymentDate": "2025-05-15T10:00:00Z",
+    "method": "Efectivo"
+  },
+  {
+    "id": "pay-003",
+    "patientId": "pat-003",
+    "amount": 300.00,
+    "status": "Parcial",
+    "paymentDate": "2025-05-10T10:00:00Z",
+    "method": "Tarjeta de Crédito"
+  }
+]
