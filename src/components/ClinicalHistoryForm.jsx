@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CheckCircle2, ChevronRight, ChevronLeft, Save } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -21,8 +21,8 @@ export default function ClinicalHistoryForm({ patientId }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSaved, setIsSaved] = useState(false);
 
-  const { register, handleSubmit, reset } = useForm({
-    defaultValues: {
+  const { register, handleSubmit } = useForm({
+    defaultValues: patient?.clinicalHistory || {
       motivo: '',
       embarazo: '',
       desarrolloMotor: '',
@@ -30,12 +30,6 @@ export default function ClinicalHistoryForm({ patientId }) {
       observaciones: ''
     }
   });
-
-  useEffect(() => {
-    if (patient?.clinicalHistory) {
-      reset(patient.clinicalHistory);
-    }
-  }, [patient, reset]);
 
   const onSubmit = (data) => {
     updateClinicalHistory(patientId, data);
@@ -187,7 +181,7 @@ export default function ClinicalHistoryForm({ patientId }) {
                 onClick={nextStep}
                 className="px-4 py-2 flex items-center text-sm font-medium text-white bg-[var(--color-primary)] rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Siguiente
+                <span>Siguiente</span>
                 <ChevronRight className="w-4 h-4 ml-1" />
               </button>
             ) : (
@@ -200,7 +194,7 @@ export default function ClinicalHistoryForm({ patientId }) {
                   }`}
                 >
                   <Save className="w-4 h-4 mr-2" />
-                  {isSaved ? '¡Guardado!' : 'Guardar Historia'}
+                  <span>{isSaved ? '¡Guardado!' : 'Guardar Historia'}</span>
                 </button>
               )
             )}
